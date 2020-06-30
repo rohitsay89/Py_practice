@@ -18,8 +18,8 @@ print("Scope name = ", __name__)
 class Person:
     # Base class constructor:
     def __init__(self):
-        self.name = input("Enter First name:")
-        self.age = input("Enter Age:")
+        self.name = input("Enter First name: ")
+        self.age = input("Enter Age: ")
     def getName(self):
         return self.name
     def getAge(self):
@@ -30,13 +30,28 @@ class Student(Person):
     # Derived class constructor:
     def __init__(self):
         Person.__init__(self)
-        self.rollNum = input("Enter Roll number:")
-        self.avgMarks = input("Enter average marks:")
+        self.rollNum = input("Enter Roll number: ")
+        self.avgMarks = input("Enter average marks: ")
     def getRollNumber(self):
         return self.rollNum
     def getAvgMarks(self):
         return self.avgMarks
 
-x = Student()
+class GradStudent(Student):
+    def __init__(self):
+        Student.__init__(self)
+        self.subject = input("Enter Graduate coursename: ")
+        self.employed = input("Enter employment status Y/N: ")
+    def getSubject(self):
+        return self.subject
+    def getEmploymentStatus(self):
+        if(self.employed == 'Y'):
+            return "Employed"
+        else:
+            return "Not Employed"
+
+#x = Student()
+x = GradStudent()
 print("Name = ", x.getName(), "Age = ", x.getAge())
 print("Roll number = ", x.getRollNumber(), "Average marks = ", x.getAvgMarks())
+print("Subject = ", x.getSubject(), "Employment status = ", x.getEmploymentStatus())
