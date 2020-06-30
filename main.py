@@ -14,9 +14,9 @@ def add_func(x, y):
 #add_func(20, 20)
 print("Scope name = ", __name__)
 
-# Sample class
+# Sample Base class
 class Person:
-    # constructor:
+    # Base class constructor:
     def __init__(self):
         self.name = input("Enter First name:")
         self.age = input("Enter Age:")
@@ -25,7 +25,9 @@ class Person:
     def getAge(self):
         return self.age
 
+# Sample Derived class
 class Student(Person):
+    # Derived class constructor:
     def __init__(self):
         Person.__init__(self)
         self.rollNum = input("Enter Roll number:")
@@ -36,6 +38,5 @@ class Student(Person):
         return self.avgMarks
 
 x = Student()
-#x = Person()
 print("Name = ", x.getName(), "Age = ", x.getAge())
 print("Roll number = ", x.getRollNumber(), "Average marks = ", x.getAvgMarks())
