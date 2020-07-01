@@ -11,11 +11,33 @@ print("Run Date & Time = ", datetime.datetime.now())
 
 #=============================================================#
 
-# simple function implementation:
+# Python Calculator:
 def add_func(x, y):
-    print("This is a function for adding 2 nums")
-    z = x+y
-    print("Sum = ", z)
+    #print(x+y)
+    return (x+y)
+
+def mul_func(a, b):
+    #print(a*b)
+    return (a*b)
+
+# this division will return a float value
+def div_float(a, b):
+    #print(a/b)
+    return (a/b)
+
+# this division will return an int value
+def div_int(a, b):
+    #print(a//b)
+    return (a//b)
+
+def div_mod(a, b):
+    #print(a%b)
+    return (a%b)
+
+def num_power(a, p):
+    #print(a**p)
+    return (a ** p)
+
 
 #=============================================================#
 
@@ -168,12 +190,56 @@ def addressOfObjects():
     print("Address of A = ", id(a))
 # =============================================================#
 
+def pythonCalculator():
+    a = 10
+    b = 20
+    print("Addition: ", add_func(a, b))
+    print("Multiplication: ", mul_func(a, b))
+    print("Float division: ", div_float(a, b))
+    print("Integer part division: ", div_int(a, b))
+    print("Modulus operation: ", div_mod(a, b))
+    print("Exponent: ", num_power(a, b))
+# =============================================================#
+
+# lists are 0 indexed, i.e. they start from 0,1,2,3,4.....n
+def learnLists():
+    print("This is List example snippet")
+    try:
+        squares = [1,4,9,16,25]
+        #print(squares)
+
+        # print from 1st element to last, not including 0th element
+        #print(squares[1:])
+
+        # concatinate squares:
+        squares = squares + [36,49,64,81,100]
+        #print(squares)
+
+        # can access individual element of the list
+        squares[0] = 2
+        #print(squares)
+
+        # can print lenght using len
+        #print(len(squares))
+
+        print("Create list of squares of first 10 numbers")
+        # empty the list
+        squares = []
+        var = []
+        for num in range(1, 11):
+            #print("Num = ", num)
+            squares = squares + [num_power(num, 2)]
+        print(squares)
+    except:
+        print(sys.exc_info())
 
 # =============================================================#
-#add_func(20, 20)
+
 #learnInheritance()
 #learnClassIterators()
 #ReadBinFile(20)
-addressOfObjects()
+#addressOfObjects()
+#pythonCalculator()
+learnLists()
 
 #=============================================================#
