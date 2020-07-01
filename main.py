@@ -1,18 +1,23 @@
+#=============================================================#
 import sys
+import binascii
 import datetime
-
+#=============================================================#
 print("Hello World, this is python learning codebase")
 print("Major version = ", sys.version_info.major,
       "\nMinor version = ", sys.version_info.minor)
 print("Run Date & Time = ", datetime.datetime.now())
+print("Scope name = ", __name__)
+
+#=============================================================#
 
 # simple function implementation:
 def add_func(x, y):
     print("This is a function for adding 2 nums")
     z = x+y
     print("Sum = ", z)
-#add_func(20, 20)
-print("Scope name = ", __name__)
+
+#=============================================================#
 
 # Sample Base class
 class Person:
@@ -50,11 +55,14 @@ class GradStudent(Student):
         else:
             return "Not Employed"
 
-#x = Student()
-#x = GradStudent()
-#print("Name = ", x.getName(), "Age = ", x.getAge())
-#print("Roll number = ", x.getRollNumber(), "Average marks = ", x.getAvgMarks())
-#print("Subject = ", x.getSubject(), "Employment status = ", x.getEmploymentStatus())
+def learnInheritance():
+    print("Class demo")
+    x = GradStudent()
+    print("Name = ", x.getName(), "Age = ", x.getAge())
+    print("Roll number = ", x.getRollNumber(), "Average marks = ", x.getAvgMarks())
+    print("Subject = ", x.getSubject(), "Employment status = ", x.getEmploymentStatus())
+
+#=============================================================#
 
 # iterators using classes
 class Reverse:
@@ -69,13 +77,15 @@ class Reverse:
         self.index = self.index - 1
         return self.data[self.index]
 
-#print("Iterators using a class")
-#rev = Reverse('spam')
-#iter(rev)
-#for char in rev:
-#    print(char)
+def learnClassIterators():
+    print("Iterators using a class")
+    rev = Reverse('spam')
+    iter(rev)
+    for char in rev:
+        print(char)
 
-# PRINT_LAST_K_LINES_IN_A_FILE, K = 5
+#=============================================================#
+# PRINT_LAST_K_LINES_IN_A_TEXT_FILE, K = 5
 # open a file in reading mode
 def PRINT_LAST_K_LINES_IN_A_FILE(K):
     try:
@@ -109,19 +119,46 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
 #PRINT_LAST_K_LINES_IN_A_FILE(5)
 #PRINT_LAST_K_LINES_IN_A_FILE(23)
 
+#=============================================================#
 # Read a binary file
-def ReadBinFile():
+def ReadBinFile(K):
+    print("This is binary file read snippet")
     try:
         myBinFile = open("test_boot.bin", "rb")
+
+        # get the size of binary file in bytes
         myBinFile.read()
+        binFileSize = 0
         print("Length = ", myBinFile.tell(), "Bytes")
+        binFileSize = myBinFile.tell()
+        if(K > binFileSize):
+            print("Requested bytes are larger than file size printing all bytes")
+
         # set the file pointer back to origin
         myBinFile.seek(0,0)
+
+        # now read first 20 bytes and print them
+        data = myBinFile.read(20)
+        hex_data = binascii.hexlify(data)
+
+        # reset the file pointer back to start location
+        myBinFile.seek(0, 0)
+
+        print("Printing first", K, "Bytes of the bin file")
+        #for count in range(binFileSize):
+        for count in range(K):
+            print(binascii.hexlify(myBinFile.read(1)), count)
 
         myBinFile.close()
 
     except:
         print(sys.exc_info())
 
-print("This is binary file read snippet")
-ReadBinFile()
+#=============================================================#
+
+#add_func(20, 20)
+#learnInheritance()
+#learnClassIterators()
+ReadBinFile(20)
+
+#=============================================================#
