@@ -69,7 +69,39 @@ class Reverse:
         self.index = self.index - 1
         return self.data[self.index]
 
-rev = Reverse('spam')
-iter(rev)
-for char in rev:
-    print(char)
+#print("Iterators using a class")
+#rev = Reverse('spam')
+#iter(rev)
+#for char in rev:
+#    print(char)
+
+# PRINT_LAST_K_LINES_IN_A_FILE, K = 5
+# open a file in reading mode
+def PRINT_LAST_K_LINES_IN_A_FILE(K):
+    try:
+        myFile = open("books.txt", "r")
+        print(myFile)
+        #print(myFile.read())
+        #print("Tell = ", myFile.tell())
+        #print("Seek = ", myFile.seek())
+        count = 0
+        for line in myFile:
+            count = count + 1
+        print("Number of lines = ",count)
+
+        # Move back the file pointer to start of file
+        myFile.seek(0,0)
+
+        lineCount = 0
+        for line in myFile:
+            # skip the lines which are less than count-K
+            if(lineCount >= count-K):
+                print(line)
+            lineCount = lineCount + 1
+        myFile.close()
+
+    except:
+        print(sys.exc_info())
+
+print("PRINT_LAST_K_LINES_IN_A_FILE")
+PRINT_LAST_K_LINES_IN_A_FILE(5)
