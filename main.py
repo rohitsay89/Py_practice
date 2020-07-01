@@ -20,12 +20,12 @@ def mul_func(a, b):
     #print(a*b)
     return (a*b)
 
-# this division will return a float value
+# this division will return result as float
 def div_float(a, b):
     #print(a/b)
     return (a/b)
 
-# this division will return an int value
+# this division will return integer part of result
 def div_int(a, b):
     #print(a//b)
     return (a//b)
