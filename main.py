@@ -7,7 +7,7 @@ print("Hello World, this is python learning codebase")
 print("Major version = ", sys.version_info.major,
       "\nMinor version = ", sys.version_info.minor)
 print("Run Date & Time = ", datetime.datetime.now())
-print("Scope name = ", __name__)
+#print("Scope name = ", __name__)
 
 #=============================================================#
 
@@ -159,9 +159,21 @@ def ReadBinFile(K):
         print("This is finally clause")
 #=============================================================#
 
+def addressOfObjects():
+    x = 10
+    y = 20
+    print("Address of x = ", id(x))
+    print("Address of Y = ", id(y))
+    a = GradStudent()
+    print("Address of A = ", id(a))
+# =============================================================#
+
+
+# =============================================================#
 #add_func(20, 20)
 #learnInheritance()
 #learnClassIterators()
-ReadBinFile(20)
+#ReadBinFile(20)
+addressOfObjects()
 
 #=============================================================#
