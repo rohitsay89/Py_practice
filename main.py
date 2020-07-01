@@ -88,6 +88,8 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
         for line in myFile:
             count = count + 1
         print("Number of lines = ",count)
+        if(K > count):
+            print("Printing all lines as requested value is more that number of lines in the file")
 
         # Move back the file pointer to start of file
         myFile.seek(0,0)
@@ -104,4 +106,5 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
         print(sys.exc_info())
 
 print("PRINT_LAST_K_LINES_IN_A_FILE")
-PRINT_LAST_K_LINES_IN_A_FILE(5)
+#PRINT_LAST_K_LINES_IN_A_FILE(5)
+PRINT_LAST_K_LINES_IN_A_FILE(23)
