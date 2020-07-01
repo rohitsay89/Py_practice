@@ -105,6 +105,23 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
     except:
         print(sys.exc_info())
 
-print("PRINT_LAST_K_LINES_IN_A_FILE")
+#print("PRINT_LAST_K_LINES_IN_A_FILE")
 #PRINT_LAST_K_LINES_IN_A_FILE(5)
-PRINT_LAST_K_LINES_IN_A_FILE(23)
+#PRINT_LAST_K_LINES_IN_A_FILE(23)
+
+# Read a binary file
+def ReadBinFile():
+    try:
+        myBinFile = open("test_boot.bin", "rb")
+        myBinFile.read()
+        print("Length = ", myBinFile.tell(), "Bytes")
+        # set the file pointer back to origin
+        myBinFile.seek(0,0)
+
+        myBinFile.close()
+
+    except:
+        print(sys.exc_info())
+
+print("This is binary file read snippet")
+ReadBinFile()
