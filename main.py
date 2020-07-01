@@ -114,6 +114,8 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
 
     except:
         print(sys.exc_info())
+    finally:
+        print("This is finally clause")
 
 #print("PRINT_LAST_K_LINES_IN_A_FILE")
 #PRINT_LAST_K_LINES_IN_A_FILE(5)
@@ -124,36 +126,37 @@ def PRINT_LAST_K_LINES_IN_A_FILE(K):
 def ReadBinFile(K):
     print("This is binary file read snippet")
     try:
-        myBinFile = open("test_boot.bin", "rb")
+        #myBinFile = open("test_boot.bin", "rb")
+        with open("test_boot.bin", "rb") as myBinFile:
 
-        # get the size of binary file in bytes
-        myBinFile.read()
-        binFileSize = 0
-        print("Length = ", myBinFile.tell(), "Bytes")
-        binFileSize = myBinFile.tell()
-        if(K > binFileSize):
-            print("Requested bytes are larger than file size printing all bytes")
+            # get the size of binary file in bytes
+            myBinFile.read()
+            binFileSize = 0
+            print("Length = ", myBinFile.tell(), "Bytes")
+            binFileSize = myBinFile.tell()
+            if(K > binFileSize):
+                print("Requested bytes are larger than file size printing all bytes")
 
-        # set the file pointer back to origin
-        myBinFile.seek(0,0)
+            # set the file pointer back to origin
+            myBinFile.seek(0,0)
 
-        # now read first 20 bytes and print them
-        data = myBinFile.read(20)
-        hex_data = binascii.hexlify(data)
+            # now read first 20 bytes and print them
+            data = myBinFile.read(20)
+            hex_data = binascii.hexlify(data)
 
-        # reset the file pointer back to start location
-        myBinFile.seek(0, 0)
+            # reset the file pointer back to start location
+            myBinFile.seek(0, 0)
 
-        print("Printing first", K, "Bytes of the bin file")
-        #for count in range(binFileSize):
-        for count in range(K):
-            print(binascii.hexlify(myBinFile.read(1)), count)
+            print("Printing first", K, "Bytes of the bin file")
+            #for count in range(binFileSize):
+            for count in range(K):
+                print(binascii.hexlify(myBinFile.read(1)), count)
 
-        myBinFile.close()
-
+            myBinFile.close()
     except:
         print(sys.exc_info())
-
+    finally:
+        print("This is finally clause")
 #=============================================================#
 
 #add_func(20, 20)
