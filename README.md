@@ -16,3 +16,18 @@ Steps to run(Mac/Linux):
 4. Type in command: 'python main.py'
 
 Further you can comment/uncomment whichever function you want/do not want to run in the bottom part of main.py
+
+Following are the topics that are discussed in this repository:
+1. Python basics
+2. Object oriented basics
+3. Data Structures Basics: 
+    a. Stack 
+    b. Queue
+    c. Circular buffer
+    d. Linked List
+    e. Tree
+    f. Graph
+
+4. COM port communication
+5. SQLite usage
+6. Data Analysis
