@@ -56,6 +56,21 @@ def learnCSVAverage():
         print("Total active cases =", totalActive)
         print("Number of states: =", numStates)
         print("Average number of active cases today=", totalActive/numStates)
+        averageCSV = totalActive/numStates
+
+        print("Now calculating the average across all states")
+        # reset the file handle to start position by using seek
+        myDataFile.seek(0)
+        # now skip the header
+        next(readCSV, None)
+        # iterate through the file and compate the average value to column value
+        for row in readCSV:
+            if((float)(row[8]) > averageCSV):
+                print(row[0], "-> This state is above average")
+            else:
+                print(row[0], "-> This state is below average")
+
+
         # Close the file after reading
         myDataFile.close()
     except:
