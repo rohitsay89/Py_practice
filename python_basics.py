@@ -91,3 +91,10 @@ print("####---Results---####")
 print(f"The first input is  {input1} Type of input is {type(input1)}")
 print(f"The second input is {input2} Type of input is {type(input2)}")
 print(f"The second input is {input3} Type of input is {type(input3)}")
+
+#==========================================================================#
+# Multiple input using split()
+#==========================================================================#
+
+x, y = input("Enter two numbers : ").split()
+print(f"value of {x} and value of {y}")
