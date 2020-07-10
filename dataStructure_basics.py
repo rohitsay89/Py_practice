@@ -1,11 +1,20 @@
 # This is a python file for using implementing basic data structures using python
+# =============================================================#
+import sys
+import datetime
+
+# =============================================================#
+print("Hello World, this is python learning codebase")
+print("Major version = ", sys.version_info.major,
+      "\nMinor version = ", sys.version_info.minor)
+print("Run Date & Time = ", datetime.datetime.now())
+
+# =============================================================#
 
 # Program to create a stack data structure in Python using list
-
 a = [0, 0, 0, 0, 0]  # create a default list of all zeros
 top = 0
 print("Program to create a stack data structure in Python using list \n")
-
 
 def Push(n):  # Push function: Push data on the stack
     global top  # specify the 'top' variable is global
@@ -29,3 +38,4 @@ Pop()
 Pop()
 
 print(a)  # Print the updated list after all operations
+# =============================================================#
