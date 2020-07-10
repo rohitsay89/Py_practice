@@ -4,7 +4,6 @@ Documentation for Python Basics
 """
 # =============================================================#
 import sys
-import binascii
 import datetime
 # =============================================================#
 
