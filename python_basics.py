@@ -1,59 +1,65 @@
 #!/usr/local/bin/python3.8
 """
-Documentation for Python Basics 
+Documentation for Python Basics
 """
+# =============================================================#
+import sys
+import binascii
+import datetime
+# =============================================================#
 
-#Print Hello World
-print("Hello World")
+print("Hello World, this is python learning codebase")
+print("Major version = ", sys.version_info.major,
+      "\nMinor version = ", sys.version_info.minor)
+print("Run Date & Time = ", datetime.datetime.now())
 
-#Variables and Data Structures 
+# Variables and Data Structures
 
-#Assigning Integer
-my_number = 4 
+# Assigning Integer
+my_number = 4
 print(my_number)
 
-#Assigning float
-your_number = 4.5 
+# Assigning float
+your_number = 4.5
 
-#Creating an empty list 
+# Creating an empty list
 numbers = []
 
-#Appending data into the list 
+# Appending data into the list
 numbers.append(24)
 
-#Appending string into the list 
+# Appending string into the list
 numbers.append("myname")
 
-#Input from users from command line
+# Input from users from command line
 name = input("Enter your name: ")
 
-
-#Print input data 
+# Print input data
 print("Greetings", name)
 
-#Convert the input into integer
+# Convert the input into integer
 number1 = int(input("Enter number 1: "))
 number2 = int(input("Enter number 2: "))
 
-#Multiplying
+# Multiplying
 number3 = number1 * number2
 print("Product is :", number3)
 
-#If statement  
+# If statement
 input_number = int(input("Enter your number : "))
 if (input_number > 1):
     print("The number entered is greater than 1")
 elif (input_number < 50):
     print("The number entered is less than 50")
 elif (input_number > 50):
-    print("The numner entered in greater than 50")
-else :
+    print("The number entered in greater than 50")
+else:
     print("Invalid number")
 
-#Function
 
+# Function
 def greet(name):
-    print("Hello",name)
+    print("Hello", name)
+
 
 greet('Dhee')
-
