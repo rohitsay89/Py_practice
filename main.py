@@ -1,8 +1,8 @@
 # =============================================================#
 import sys
-import binascii
 import datetime
 
+import binascii
 # =============================================================#
 print("Hello World, this is python learning codebase")
 print("Major version = ", sys.version_info.major,
