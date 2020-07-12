@@ -5,6 +5,7 @@ Documentation for Python Basics
 # =============================================================#
 import sys
 import datetime
+
 # =============================================================#
 
 print("Hello World, this is python learning codebase")
@@ -95,6 +96,86 @@ print(f"The second input is {input3} Type of input is {type(input3)}")
 #==========================================================================#
 # Multiple input using split()
 #==========================================================================#
-
+# Taking 2 inputs at a time
 x, y = input("Enter two numbers : ").split()
 print(f"value of {x} and value of {y}")
+
+# Taking 2 comma separated inputs at a time  
+x, y = input("Enter two numbers seprated by comma ',' : ").split(',')
+print(f"value of {x} and value of {y}")
+
+# Taking mutiple input at a time and putting into a list
+x = list(map(int, input("Enter multiple values to put into an list : ").split()))
+print("List of students : ", x)
+
+
+# How to take multiple input using List comprehension
+x, y = [int(x) for x in input("Enter two numbers : ").split()]
+print(f"The first number {x} and second number is {y}")
+
+#==========================================================================#
+# Multiple input using split()
+# print command syntex 
+#==========================================================================#
+
+Syntax: print(value(s), sep= ‘ ‘, end = ‘\n’, file=file, flush=flush)
+
+Parameters:
+value(s) : Any value, and as many as you like. Will be converted to string before printed
+sep=’separator’ : (Optional) Specify how to separate the objects, if there is more than one.Default :’ ‘
+end=’end’: (Optional) Specify what to print at the end.Default : ‘\n’
+file : (Optional) An object with a write method. Default :sys.stdout
+flush : (Optional) A Boolean, specifying if the output is flushed (True) or buffered (False). Default: False
+
+Returns: It returns output to the screen.
+
+
+print("The world is mine!!")
+
+# Print line with comma in between
+print("E","N","D", sep=',')
+
+# Print line no space 
+for i in range(5):
+    print(i, end="")
+
+
+for i in range(5):
+    print(i, end="$")
+
+"""
+OPERATOR	DESCRIPTION	SYNTAX
++	Addition: adds two operands	x + y
+-	Subtraction: subtracts two operands	x - y
+*	Multiplication: multiplies two operands	x * y
+/	Division (float): divides the first operand by the second	x / y
+//	Division (floor): divides the first operand by the second	x // y
+%	Modulus: returns the remainder when first operand is divided by the second	x % y
+**	Power : Returns first raised to power second	x ** y
+"""
+
+a = 10 
+b = 10
+y = 35
+z = 6
+
+# Adding two numbers 
+print ("Sum of numbers : {a+b}")
+
+# Subtraction 
+print (a-b)
+
+# Multiplication 
+print (a*b)
+
+# Division (float)
+print (y/z)
+
+# Division (floor)
+print (y//z)
+
+# Modulus 
+print (y%z)
+
+# Power 
+print (a**)
