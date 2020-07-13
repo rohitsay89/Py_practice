@@ -89,5 +89,16 @@ def learnClassIterators():
 
 # =============================================================#
 
+def addressOfObjects():
+    x = 10
+    y = 20
+    print("Address of x = ", id(x))
+    print("Address of Y = ", id(y))
+    a = GradStudent()
+    print("Address of A = ", id(a))
+
+# =============================================================#
+
 learnInheritance()
-# learnClassIterators()
+#learnClassIterators()
+#addressOfObjects()
