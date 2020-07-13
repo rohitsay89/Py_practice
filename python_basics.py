@@ -158,25 +158,25 @@ y = 35
 z = 6
 
 # Adding two numbers 
-print ("Sum of numbers : {a+b}")
+print("Sum of numbers : {a+b}")
 
 # Subtraction 
-print (a-b)
+print(a-b)
 
 # Multiplication 
-print (a*b)
+print(a*b)
 
 # Division (float)
-print (y/z)
+print(y/z)
 
 # Division (floor)
-print (y//z)
+print(y//z)
 
 # Modulus 
-print (y%z)
+print(y%z)
 
 # Power 
-print (a**b)
+print(a**b)
 
 #========================================================================#
 # Any and All operator in python
@@ -184,16 +184,16 @@ print (a**b)
 #========================================================================#
 
 # Since all are false, false is returned 
-print (any ([False, False, False, False]))
+print(any ([False, False, False, False]))
 
 # Here the method will short-circuit at the 
 # second item (True) and will return True. 
-print (any ([False, True, True, False, False]))
+print(any ([False, True, True, False, False]))
 
  
 # Here the method will short-circuit at the 
 # first (True) and will return True. 
-print (any ([True, True, True]))
+print(any ([True, True, True]))
 
 # Practical Example
 
@@ -206,18 +206,17 @@ for i in range(1,11):
 for i in range(0,10):
     list2.append(list1[i]%5 == 0)
 
-print ("Find if there is any number divisible by 5")
-print (any(list2))
-print (list2)
+print("Find if there is any number divisible by 5")
+print(any(list2))
+print(list2)
 
 
 # All operator is True when all the inputs in the list are True
 
-print (all([True, True, True, True, True]))
+print(all([True, True, True, True, True]))
+print(all([False, False, False, False, False]))
 
-print (all([False, False, False, False, False]))
-
-print (all([True, False, False, False]))
+print(all([True, False, False, False]))
 
 
 # Library to call operators
@@ -232,7 +231,7 @@ import operator
 
 a = "This is a string"
 
-print (a)
+print(a)
 #==================================================================================================================#
 # ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
 #  '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', 
@@ -254,10 +253,10 @@ s = 'The world is awesome'
 # While accessing an index out of the range will cause an IndexError. Only Integers are 
 # allowed to be passed as an index, float or other types will cause a TypeError.
 #==================================================================================================================#
-print ("\nAccessing first character in a string")
+print("\nAccessing first character in a string")
 print(s[0])
 
-print ("\nAccessing last character in a string")
+print("\nAccessing last character in a string")
 print(s[-1])
 
 # String Module
@@ -303,7 +302,7 @@ import string
 
 # Declearing a list 
 l = [1,3,5,6,67,'dhee', 'dkdk']
-print (l)
+print(l)
 
 #==================================================================================================================#
 # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', 
