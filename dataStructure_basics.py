@@ -2,9 +2,15 @@
 # =============================================================#
 import sys
 import datetime
-
+"""
+1. Stack 
+2. Queue 
+3. Circular queue
+4. Tree
+5. Graph
+"""
 # =============================================================#
-print("Hello World, this is python learning codebase")
+print("Hello World, this is Data Structure in python implementation")
 print("Major version = ", sys.version_info.major,
       "\nMinor version = ", sys.version_info.minor)
 print("Run Date & Time = ", datetime.datetime.now())
