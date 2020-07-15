@@ -87,7 +87,7 @@ class LinkedList(object):
             print ("Empty Node")
             return False
 
-        for i in range(0, position):
+        for i in range(0, position-1):
             current_node = current_node.next
         temp_node = current_node.next    
         current_node.next = new_node
@@ -96,6 +96,7 @@ class LinkedList(object):
         
         
     def add_node(self,data):
+        'The trick is loop till the end and add the node'
         new_node = Node(data)
         current_node = self.head
         if current_node == None:
@@ -107,11 +108,38 @@ class LinkedList(object):
         current_node.next = new_node
         self.count +=1
 
+    def delete_first(self):
+        current_node = self.head
+        self.head = current_node.next
+        self.count -= 1
+        return True 
+        
+    def delele_mid(self,position):
+        current_node = self.head
+        previous_node = self.head
+        
+        for i in range(0,position-1):
+            previous_node = current_node
+            current_node = current_node.next
+        previous_node.next = current_node
+        self.count -= 1
+        return True 
+
+    def delete_last(self):
+        current_node = self.head
+        previous_node = self.head
+        while current_node.next:
+            previous_node = current_node
+            current_node = current_node.next
+        previous_node.next = None
+        self.count -= 1
+        return True 
+
     def print_node(self):
         current = self.head
         if current == None:
             print("No node associated with the head")
-        while current != None:
+        while current:
             print (current.data, end='->')
             current = current.next
         print("None")
@@ -146,10 +174,27 @@ print("\nPrint all nodes")
 ll.print_node()
 
 print ("\nAdding node on the 3rd position")
-ll.add_middle(3.4,3)
+ll.add_middle(2.5,3)
+
 
 print("\nPrint all nodes\n")
 ll.print_node()
+
+print("Deleting first node")
+ll.delete_first()
+
+print("\nPrinting all nodes")
+ll.print_node()
+
+print("\nDeleting Last node")
+ll.delete_last()
+
+print("\nDeleting Mid node")
+ll.delele_mid(2)
+
+print("\nPrinting all nodes")
+ll.print_node()
+
 print ("\nGetting Size of the Linked list")
 print(ll.size())
         
