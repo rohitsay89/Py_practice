@@ -3,6 +3,7 @@
 import sys
 import datetime
 """
+0. Linked List
 1. Stack 
 2. Queue 
 3. Circular queue
@@ -17,41 +18,7 @@ print("Run Date & Time = ", datetime.datetime.now())
 
 # =============================================================#
 
-# Program to create a stack data structure in Python using list
-a = [0, 0, 0, 0, 0]  # create a default list of all zeros
-top = 0
-print("Program to create a stack data structure in Python using list \n")
-
-
-def Push(n):  # Push function: Push data on the stack
-    global top  # specify the 'top' variable is global
-    a[top] = n  # store the value at the top of stack
-    top = top + 1  # increment the top
-    print("Top = ", top)  # print the top position number after each Push operation
-
-
-def Pop():  # Pop function: remove data from top of stack
-    global top  # specify the 'top' variable is global
-    top = top - 1  # decrement the top variable
-    print("Top = ", top)  # print the top position number after each Push operation
-
-
-def learnStack():
-    print(a)
-    Push(5)  # Push and Pop operation
-    Push(6)
-    Push(27)
-    Pop()
-    Pop()
-    print(a)  # Print the updated list after all operations
-
-
-# ============================================================#
-
-learnStack()
-
-print(a)  # Print the updated list after all operations
-# =============================================================#
+#=======================Linked List Class======================================#
 
 # Linked List
 
@@ -159,67 +126,98 @@ class LinkedList(object):
             
 #=============================================================================#           
 #=======================Linked List test======================================#
-print("\nInitializing Linked List\n")        
-ll = LinkedList()
-
-print ("\nGetting Size of the Linked list\n")
-print(ll.size())
-
-print ("\nAdding node on the 3rd position")
-ll.add_middle(3.4,3)
-
-print ("\nAdding node at the end of the Linked List\n")
-ll.add_node(1)
-
-print ("\nAdding node at the end of the Linked List\n")
-ll.add_node(2)
-
-print ("\nAdding node at the end of the Linked List\n")
-ll.add_node(3)
-
-print ("\nAdding node at the end of the Linked List\n")
-ll.add_node(4)
-
-print ("\nAdding node at the begining of the Linked List\n")
-ll.add_beg(0)
-
-print("\nPrint all nodes")
-ll.print_node()
-
-print ("\nAdding node on the 3rd position")
-ll.add_middle(2.5,3)
 
 
-print("\nPrint all nodes\n")
-ll.print_node()
+def learnLinkedList():
+    print("\nInitializing Linked List\n")
+    ll = LinkedList()
 
-print("Deleting first node")
-ll.delete_first()
+    print ("\nGetting Size of the Linked list\n")
+    print(ll.size())
 
-print("\nPrinting all nodes")
-ll.print_node()
+    print ("\nAdding node on the 3rd position")
+    ll.add_middle(3.4,3)
 
-print("\nDeleting Last node")
-ll.delete_last()
+    print ("\nAdding node at the end of the Linked List\n")
+    ll.add_node(1)
 
-print("\nDeleting Mid node")
-ll.delele_mid(2)
+    print ("\nAdding node at the end of the Linked List\n")
+    ll.add_node(2)
 
-print("\nPrinting all nodes")
-ll.print_node()
+    print ("\nAdding node at the end of the Linked List\n")
+    ll.add_node(3)
 
-print ("\nGetting Size of the Linked list")
-print(ll.size())
-        
-        
+    print ("\nAdding node at the end of the Linked List\n")
+    ll.add_node(4)
+
+    print ("\nAdding node at the begining of the Linked List\n")
+    ll.add_beg(0)
+
+    print("\nPrint all nodes")
+    ll.print_node()
+
+    print ("\nAdding node on the 3rd position")
+    ll.add_middle(2.5,3)
 
 
+    print("\nPrint all nodes\n")
+    ll.print_node()
+
+    print("Deleting first node")
+    ll.delete_first()
+
+    print("\nPrinting all nodes")
+    ll.print_node()
+
+    print("\nDeleting Last node")
+    ll.delete_last()
+
+    print("\nDeleting Mid node")
+    ll.delele_mid(2)
+
+    print("\nPrinting all nodes")
+    ll.print_node()
+
+    print ("\nGetting Size of the Linked list")
+    print(ll.size())
 
 
+#=============================================================================#
 
-    
+#=======================Stack using Lists======================================#
+
+# Program to create a stack data structure in Python using list
+a = [0, 0, 0, 0, 0]  # create a default list of all zeros
+top = 0
+print("Program to create a stack data structure in Python using list \n")
 
 
+def Push(n):  # Push function: Push data on the stack
+    global top  # specify the 'top' variable is global
+    a[top] = n  # store the value at the top of stack
+    top = top + 1  # increment the top
+    print("Top = ", top)  # print the top position number after each Push operation
 
+
+def Pop():  # Pop function: remove data from top of stack
+    global top  # specify the 'top' variable is global
+    top = top - 1  # decrement the top variable
+    print("Top = ", top)  # print the top position number after each Push operation
+
+
+def learnStack():
+    print(a)
+    Push(5)  # Push and Pop operation
+    Push(6)
+    Push(27)
+    Pop()
+    Pop()
+    print(a)  # Print the updated list after all operations
+
+
+# =============================================================================#
+
+learnLinkedList()
+#learnStack()
 
 
