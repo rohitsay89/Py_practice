@@ -123,17 +123,6 @@ def ReadBinFile(K):
 
 # =============================================================#
 
-def addressOfObjects():
-    x = 10
-    y = 20
-    print("Address of x = ", id(x))
-    print("Address of Y = ", id(y))
-    a = GradStudent()
-    print("Address of A = ", id(a))
-
-
-# =============================================================#
-
 def pythonCalculator():
     a = 10
     b = 20
