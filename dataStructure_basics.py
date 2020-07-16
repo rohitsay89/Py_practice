@@ -315,11 +315,31 @@ class Queue:
         else:
             self.queue.pop()
 
+    def print_queue(self):
+        for data in self.queue:
+            print (data, end="->")
+        
+# =============================================================================#
+# ======================== Queue Test =========================================#
     
+def learnQueue():
+    que = Queue()
 
-    
+    print("\nAdding data into the queue")
+    que.add_queue(0)
+    que.add_queue(1)
+    que.add_queue(2)
+    que.add_queue(3)
+    que.add_queue(4)
 
+    print("\nPrinting Queue")
+    que.print_queue()
 
+    print("\nRemove from Queue")
+    que.remove_queue()
+
+    print("\nPrinting Queue")
+    que.print_queue()
 
 # =============================================================================#
 # ======================== Run test ===========================================#
@@ -328,5 +348,6 @@ class Queue:
 #learnLinkedList()
 #learnStack()
 #learnArray()
+#learnQueue()
 
 
