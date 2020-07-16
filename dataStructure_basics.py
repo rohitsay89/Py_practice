@@ -341,6 +341,42 @@ def learnQueue():
     print("\nPrinting Queue")
     que.print_queue()
 
+
+
+
+
+#==============================================================================#
+#========================= Dequeue ============================================#
+# Dequeue is a Data stucture that combines features of Stack and Queue. In which 
+# you can add data on both the end.
+
+from collections import deque
+
+# Initialization of Dequeue 
+def learnDequeue():
+    de = deque()
+
+    print("\nAppending data into the dequeue")
+    de.append(1)
+
+    print("\nAppending data into the dequeue")
+    de.append(2)
+
+    print("\nAppending data into the left of dequeue")
+    de.appendleft(0)
+
+    print (de)
+    print("\nPoping data from right\n")
+    de.pop()
+
+    print (de)
+    print("\nPoping data from right\n")
+    de.popleft()
+
+    print (de)
+
+
+
 # =============================================================================#
 # ======================== Run test ===========================================#
 
@@ -349,5 +385,6 @@ def learnQueue():
 #learnStack()
 #learnArray()
 #learnQueue()
+#learnDequeue()
 
 
