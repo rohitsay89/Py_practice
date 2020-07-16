@@ -115,6 +115,13 @@ class LinkedList(object):
         self.count -= 1
         return True 
 
+    def read_last_node(self):
+        current_node = self.head
+        while current_node.next:
+            current_node = current_node.next
+        return current_node.data
+
+
     def print_node(self):
         current = self.head
         if current == None:
@@ -192,12 +199,20 @@ top = 0
 print("Program to create a stack data structure in Python using list \n")
 
 
-def Push(n):                    # Push function: Push data on the stack
-    global top                  # specify the 'top' variable is global
+def Push(n):                        # Push function: Push data on the stack
+    global top                      # specify the 'top' variable is global
     a.append(n)
-    #a[top] = n     # store the value at the top of stack
-    top = top + 1               # increment the top
-    #print("Top = ", top)       # print the top position number after each Push operation
+    top = top + 1                   # increment the top
+
+
+def Pop():                          # Pop function: remove data from top of stack
+    global top                      # specify the 'top' variable is global
+    top = top - 1                   # decrement the top variable
+
+
+def Peek():
+    global top                      # specify the 'top' variable is global
+    print("Peek = ", a[top-1])
 
 
 def PrintStack():
@@ -209,21 +224,20 @@ def PrintStack():
     print()
 
 
-def Pop():  # Pop function: remove data from top of stack
-    global top  # specify the 'top' variable is global
-    top = top - 1  # decrement the top variable
-    print("Top = ", top)  # print the top position number after each Push operation
-
-
 def learnStack():
     #print(a)
-    for i in range(50):
-        Push(i*2)  # Push and Pop operation
+    for i in range(25):
+        Push(i*2)                   # Push and Pop operation
     PrintStack()
-    Pop()
+    Peek()
+
     Pop()
     PrintStack()
-    print(a)  # Print the updated list after all operations
+    Peek()
+
+    Pop()
+    PrintStack()
+    #print(a)                        # Print the updated list after all operations
 
 
 # =============================================================================#
@@ -231,10 +245,42 @@ def learnStack():
 #=======================Stack using Linked Lists======================================#
 
 
+def learnStackLL():
+    print("\nInitializing Linked List\n")
+    stack = LinkedList()
+    print(stack.size())
+    print ("\nAdding node on the 3rd position")
+    PushStackLL(stack, 5)
+    PushStackLL(stack, 6)
+    PushStackLL(stack, 7)
+    PeekStackLL(stack)
+    PushStackLL(stack, 8)
+    PushStackLL(stack, 9)
+    PushStackLL(stack, 10)
+    PeekStackLL(stack)
+    PushStackLL(stack, 11)
+    stack.print_node()
+    PopStackLL(stack)
+    stack.print_node()
+    PopStackLL(stack)
+    stack.print_node()
+
+
+def PushStackLL(stack, data):
+    stack.add_node(data)
+
+
+def PopStackLL(stack):
+    stack.delete_last()
+
+
+def PeekStackLL(stack):
+    print(stack.read_last_node())
+
 
 # =============================================================================#
 
-learnLinkedList()
-#learnStack()
-
+#learnLinkedList()
+learnStack()
+#learnStackLL()
 
