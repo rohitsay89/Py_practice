@@ -18,6 +18,64 @@ print("Run Date & Time = ", datetime.datetime.now())
 
 # =============================================================#
 
+
+# =============================================================#
+
+#=======================Array==================================#
+# arrayName = array(typecode, [Initializers])
+
+
+# By importing libray for Array in Python 
+import array
+
+# Defining array class 
+"""
+class array:
+    def __init__(self):
+        self.typecode = ''
+        self.empty_list = []
+    def array(self, typecode, arr):
+        if 
+"""
+
+# i --> typecode for integers 
+# b 	Represents signed integer of size 1 byte/td>
+# B 	Represents unsigned integer of size 1 byte
+# c 	Represents character of size 1 byte
+# i 	Represents signed integer of size 2 bytes
+# I 	Represents unsigned integer of size 2 bytes
+# f 	Represents floating point of size 4 bytes
+# d 	Represents floating point of size 8 bytes
+
+arr = array.array('i', [100, 101, 103, 104, 100]) 
+
+# Print all component of an array 
+def print_array(arr):
+
+    for i in arr:
+        print(i, end=' ')
+
+def learnArray():
+
+    # Adding data to an Array
+    arr.append(999)
+
+    # Inserting data into an Array at specific position
+    print (arr.insert(0,199))
+
+    # Find index 
+    print (arr.index(999))
+
+    # Counting the of occurance of 100 in an array
+    print (arr.count(100))
+
+    # Remove data from Array 
+    arr.remove(101)
+
+    # Print data in an Array
+    print_array(arr)
+
+
 #=======================Linked List Class======================================#
 
 # Linked List
@@ -159,7 +217,6 @@ def learnLinkedList():
     print ("\nAdding node on the 3rd position")
     ll.add_middle(2.5,3)
 
-
     print("\nPrint all nodes\n")
     ll.print_node()
 
@@ -185,11 +242,12 @@ def learnLinkedList():
 #=============================================================================#
 
 #=======================Stack using Lists======================================#
+# Reference  https://www.tutorialspoint.com/python_data_structure/python_stack.htm
 
 # Program to create a stack data structure in Python using list
 a = [0, 0, 0, 0, 0]  # create a default list of all zeros
 top = 0
-print("Program to create a stack data structure in Python using list \n")
+print("\nProgram to create a stack data structure in Python using list \n")
 
 
 def Push(n):  # Push function: Push data on the stack
@@ -198,6 +256,8 @@ def Push(n):  # Push function: Push data on the stack
     top = top + 1  # increment the top
     print("Top = ", top)  # print the top position number after each Push operation
 
+def Peek(): # Fetch the last vaule of the stack
+    print (a[-1])
 
 def Pop():  # Pop function: remove data from top of stack
     global top  # specify the 'top' variable is global
@@ -210,14 +270,54 @@ def learnStack():
     Push(5)  # Push and Pop operation
     Push(6)
     Push(27)
+    Push(90)
+    Push(50)
+    Push(38)
     Pop()
+    Peek()
     Pop()
+    
     print(a)  # Print the updated list after all operations
 
 
-# =============================================================================#
 
-learnLinkedList()
+
+#==============================================================================#
+#========================= Queue ==============================================#
+
+# Queue supports first come first serve 
+class Queue:
+    def __init__(self):
+        self.queue = list()
+
+    def __sizeof__(self):
+        return len(self.queue)
+    
+    def add_queue(self, data):
+        if data not in self.queue:
+            self.queue.insert(0,data)
+            return True
+        else:
+            return False
+
+    def remove_queue(self):
+        if len(self.queue) <= 0:
+            print("Empty Queue")
+        else:
+            self.queue.pop()
+
+    
+
+    
+
+
+
+# =============================================================================#
+# ======================== Run test ===========================================#
+
+
+#learnLinkedList()
 #learnStack()
+#learnArray()
 
 
