@@ -187,16 +187,26 @@ def learnLinkedList():
 #=======================Stack using Lists======================================#
 
 # Program to create a stack data structure in Python using list
-a = [0, 0, 0, 0, 0]  # create a default list of all zeros
+a = []  # create a default list of all zeros
 top = 0
 print("Program to create a stack data structure in Python using list \n")
 
 
-def Push(n):  # Push function: Push data on the stack
-    global top  # specify the 'top' variable is global
-    a[top] = n  # store the value at the top of stack
-    top = top + 1  # increment the top
-    print("Top = ", top)  # print the top position number after each Push operation
+def Push(n):                    # Push function: Push data on the stack
+    global top                  # specify the 'top' variable is global
+    a.append(n)
+    #a[top] = n     # store the value at the top of stack
+    top = top + 1               # increment the top
+    #print("Top = ", top)       # print the top position number after each Push operation
+
+
+def PrintStack():
+    index = 0
+    global top
+    while index < top:
+        print(a[index], "|", end=" "),
+        index = index + 1
+    print()
 
 
 def Pop():  # Pop function: remove data from top of stack
@@ -206,12 +216,13 @@ def Pop():  # Pop function: remove data from top of stack
 
 
 def learnStack():
-    print(a)
-    Push(5)  # Push and Pop operation
-    Push(6)
-    Push(27)
+    #print(a)
+    for i in range(50):
+        Push(i*2)  # Push and Pop operation
+    PrintStack()
     Pop()
     Pop()
+    PrintStack()
     print(a)  # Print the updated list after all operations
 
 
