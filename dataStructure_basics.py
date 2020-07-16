@@ -404,26 +404,30 @@ def learnDequeue():
     print("\nAppending data into the left of dequeue")
     de.appendleft(0)
 
-    print (de)
+    print(de)
     print("\nPoping data from right\n")
     de.pop()
 
-    print (de)
+    print(de)
     print("\nPoping data from right\n")
     de.popleft()
 
-    print (de)
-
-
+    print(de)
 
 # =============================================================================#
+
+def learnCircularBuffer():
+    print("This is circular buffer demo")
+
+
 # ======================== Run test ===========================================#
 
-
 #learnLinkedList()
-learnStack()
+#learnStack()
 #learnStackLL()
 #learnArray()
 #learnQueue()
 #learnDequeue()
+learnCircularBuffer()
 
+# ============================== End =========================================#
