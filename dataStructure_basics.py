@@ -276,7 +276,6 @@ def Pop():  # Pop function: remove data from top of stack
 
 
 def learnStack():
-<<<<<<< HEAD
     print(a)
     Push(5)  # Push and Pop operation
     Push(6)
@@ -284,20 +283,9 @@ def learnStack():
     Push(90)
     Push(50)
     Push(38)
-=======
-    #print(a)
-    for i in range(50):
-        Push(i*2)  # Push and Pop operation
-    PrintStack()
->>>>>>> 819b84201218b2aab5d6693ee35262d3b00340ed
     Pop()
     Peek()
     Pop()
-<<<<<<< HEAD
-    
-=======
-    PrintStack()
->>>>>>> 819b84201218b2aab5d6693ee35262d3b00340ed
     print(a)  # Print the updated list after all operations
 
 
