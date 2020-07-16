@@ -1,21 +1,21 @@
 # Py_practice
-This Python repository is my playground for different small programs being implemented in the same file. 
+This Python repository is playground for different small programs being implemented in multiple files. Each file targets a particular topic in learning programming.  
 
 Steps to run(Windows 10):
 1. You need python 3.7 or newer
 2. Download or clone the repository on your local machine
 2. just open command prompt
 3. Navigate to the folder where you have repository downloaded using 'cd' command
-4. type in command: 'python main.py'
+4. type in command: 'python main.py' or replace the main.py by whichever file you want to run.
+5. All the functions are in end of each file, just uncomment the function that you want to run.
 
 Steps to run(Mac/Linux):
 1. You need python 3.7 or newer
 2. Download or clone the repository on your local machine
 2. Open 'Terminal'
 3. Navigate to the folder where you have repository downloaded using 'cd' command
-4. Type in command: 'python main.py'
-
-Further you can comment/uncomment whichever function you want/do not want to run in the bottom part of main.py
+4. type in command: 'python main.py' or replace the main.py by whichever file you want to run.
+5. All the functions are in end of each file, just uncomment the function that you want to run.
 
 Following are the topics that are discussed in this repository:
 1. Python basics
