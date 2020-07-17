@@ -156,7 +156,7 @@ class LinkedList(object):
         current_node = self.head
         previous_node = self.head
         
-        for i in range(0, position-1):
+        for _ in range(0, position-1):
             previous_node = current_node
             current_node = current_node.next
         previous_node.next = current_node
@@ -272,7 +272,7 @@ class DoublyLinkedList:
         if current_node == None:
             print("Empty list")
         else :
-            for i in range(0, position-1):
+            for _ in range(0, position-1):
                 previous_node = current_node
                 current_node = current_node.right
         
