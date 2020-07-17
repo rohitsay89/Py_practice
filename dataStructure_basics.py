@@ -75,7 +75,6 @@ def learnArray():
     # Print data in an Array
     print_array(arr)
 
-
 #=======================Linked List Class======================================#
 
 # Linked List
@@ -185,7 +184,6 @@ class LinkedList(object):
 #=============================================================================#           
 #=======================Linked List test======================================#
 
-
 def learnLinkedList():
     print("\nInitializing Linked List\n")
     ll = LinkedList()
@@ -281,7 +279,7 @@ class DoublyLinkedList:
             temp_node.left = previous_node 
             self.count -= 1
 
-    def delete_last(self):
+    def delete_last(self): # Pop function
         current_node = self.head
         if current_node == None:
             print("Empty List")
@@ -294,7 +292,7 @@ class DoublyLinkedList:
             previous_node.right = None
             self.count -= 1
 
-    def add_node(self, data):
+    def add_node(self, data): # Push function
         new_node = DoublyNode(data)
         current_node = self.head
         if current_node  == None:
@@ -309,7 +307,18 @@ class DoublyLinkedList:
             new_node.left = current_node
             self.count += 1
             return True
-    
+
+    def add_beg(self, data):
+        new_node = DoublyNode(data)
+        current_node = self.head
+        if current_node == None:
+            current_node = new_node
+        else :
+            self.head = new_node
+            new_node.right = current_node
+            current_node.left = new_node
+            self.count -= 1
+
     def print_list(self):
         current_node = self.head
         if current_node  == None:
@@ -320,11 +329,21 @@ class DoublyLinkedList:
                 current_node = current_node.right
             print("None")
 
+    def print_first(self):
+        print(self.head.data)
+    
+    def print_last(self):
+        current_node = self.head
+        while current_node.right:
+            current_node = current_node.right
+        print(current_node.data)
+
+
 #=============================================================================#
 #====================== Doubly Linked List Test ===============================#
+
 def learnDoublyLinkedList():
     print('\nInitiate Doubly linked list\n')
-
     dl = DoublyLinkedList()
     print("Adding node\n")
     dl.add_node(0)
@@ -354,6 +373,14 @@ def learnDoublyLinkedList():
     dl.delete_last()
     dl.print_list()
     print(f"\nNumber of linked nodes = {dl.size()}\n")
+    print("\n Adding node to the begining of the list\n")
+    dl.add_beg(0)
+    print(f"\nNumber of linked nodes = {dl.size()}\n")
+    dl.print_list()
+    print("\nPrinting last node's data\n")
+    dl.print_last()
+    print("\nPrinting first node's data\n")
+    dl.print_first()
 
 #=============================================================================#
 #====================== Stack using Lists ====================================#
@@ -402,9 +429,6 @@ def learnStack():
     Peek()
     Pop()
     print(a)  # Print the updated list after all operations
-
-
-
 
 #==============================================================================#
 #========================= Queue ==============================================#
@@ -456,10 +480,6 @@ def learnQueue():
     print("\nPrinting Queue")
     que.print_queue()
 
-
-
-
-
 #==============================================================================#
 #========================= Dequeue ============================================#
 # Dequeue is a Data stucture that combines features of Stack and Queue. In which 
@@ -498,7 +518,7 @@ def learnDequeue():
 
 
 #learnLinkedList()
-learnDoublyLinkedList()
+#learnDoublyLinkedList()
 #learnStack()
 #learnArray()
 #learnQueue()
