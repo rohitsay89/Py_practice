@@ -156,7 +156,7 @@ class LinkedList(object):
         current_node = self.head
         previous_node = self.head
         
-        for i in range(0,position-1):
+        for i in range(0, position-1):
             previous_node = current_node
             current_node = current_node.next
         previous_node.next = current_node
@@ -249,14 +249,50 @@ class DoublyNode:
         self.left = None
         self.data = data 
         self.right = None
+        
     
 class DoublyLinkedList:
     def __init__(self):
         self.head = None 
-        self.count = 0 
-
+        self.count = 0
+        
     def size(self):
         return self.count
+
+    def delete_first(self):
+        if self.head == None:
+            print("Empty list")
+        else :
+            self.head = self.head.right
+            self.count -= 1
+            return True
+
+    def delete_mid(self, position):
+        current_node = self.head 
+        if current_node == None:
+            print("Empty list")
+        else :
+            for i in range(0, position-1):
+                previous_node = current_node
+                current_node = current_node.right
+        
+            temp_node = previous_node
+            previous_node.right = current_node.right
+            temp_node.left = previous_node 
+            self.count -= 1
+
+    def delete_last(self):
+        current_node = self.head
+        if current_node == None:
+            print("Empty List")
+            return False
+        else :
+            while current_node:
+                previous_node = current_node.left
+                current_node = current_node.right
+            
+            previous_node.right = None
+            self.count -= 1
 
     def add_node(self, data):
         new_node = DoublyNode(data)
@@ -265,13 +301,14 @@ class DoublyLinkedList:
             self.head = new_node
             new_node.left = self.head
             self.count += 1
-
+            return True
         else :
             while current_node.right:
                 current_node = current_node.right
             current_node.right = new_node
             new_node.left = current_node
             self.count += 1
+            return True
     
     def print_list(self):
         current_node = self.head
@@ -287,6 +324,7 @@ class DoublyLinkedList:
 #====================== Doubly Linked List Test ===============================#
 def learnDoublyLinkedList():
     print('\nInitiate Doubly linked list\n')
+
     dl = DoublyLinkedList()
     print("Adding node\n")
     dl.add_node(0)
@@ -303,9 +341,19 @@ def learnDoublyLinkedList():
     print("Adding node\n")
     print("\nPrinting all the nodes\n")
     dl.print_list()
-    print(f"\nNumber of linked nodes = {dl.size()}")
-    
-
+    print(f"\nNumber of linked nodes = {dl.size()}\n")
+    print("\nDeleting first node\n")
+    dl.delete_first()
+    dl.print_list()
+    print(f"\nNumber of linked nodes = {dl.size()}\n")
+    print("\n Deleting third node \n")
+    dl.delete_mid(3)
+    dl.print_list()
+    print(f"\nNumber of linked nodes = {dl.size()}\n")
+    print("\nDeleting Last Node\n")
+    dl.delete_last()
+    dl.print_list()
+    print(f"\nNumber of linked nodes = {dl.size()}\n")
 
 #=============================================================================#
 #====================== Stack using Lists ====================================#
