@@ -278,8 +278,8 @@ class DoublyLinkedList:
         if current_node  == None:
             print("Empty Linked List")
         else :
-            while current_node.right:
-                print(current_node.data,end='->')
+            while current_node:
+                print(current_node.data, end='->')
                 current_node = current_node.right
             print("None")
 
@@ -303,7 +303,7 @@ def learnDoublyLinkedList():
     print("Adding node\n")
     print("\nPrinting all the nodes\n")
     dl.print_list()
-    #print(f" Number of linked nodes = {dl.size}")
+    print(f"\nNumber of linked nodes = {dl.size()}")
     
 
 
