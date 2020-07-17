@@ -238,10 +238,77 @@ def learnLinkedList():
     print ("\nGetting Size of the Linked list")
     print(ll.size())
 
+#=============================================================================#
+#======================== Doubbly linked list ================================#
+# In Doubbly linked list every link has access its previous and next link
+# https://www.tutorialspoint.com/python_data_structure/python_advanced_linked_list.htm
+
+class DoublyNode:
+    def __init__(self, data=None):
+        'Initializing DoublyLinked Node list'
+        self.left = None
+        self.data = data 
+        self.right = None
+    
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None 
+        self.count = 0 
+
+    def size(self):
+        return self.count
+
+    def add_node(self, data):
+        new_node = DoublyNode(data)
+        current_node = self.head
+        if current_node  == None:
+            self.head = new_node
+            new_node.left = self.head
+            self.count += 1
+
+        else :
+            while current_node.right:
+                current_node = current_node.right
+            current_node.right = new_node
+            new_node.left = current_node
+            self.count += 1
+    
+    def print_list(self):
+        current_node = self.head
+        if current_node  == None:
+            print("Empty Linked List")
+        else :
+            while current_node.right:
+                print(current_node.data,end='->')
+                current_node = current_node.right
+            print("None")
 
 #=============================================================================#
+#====================== Doubly Linked List Test ===============================#
+def learnDoublyLinkedList():
+    print('\nInitiate Doubly linked list\n')
+    dl = DoublyLinkedList()
+    print("Adding node\n")
+    dl.add_node(0)
+    print("Adding node\n")
+    dl.add_node(1)
+    print("Adding node\n")
+    dl.add_node(2)
+    print("Adding node\n")
+    dl.add_node(3)
+    print("Adding node\n")
+    dl.add_node(4)
+    print("Adding node\n")
+    dl.add_node(5)
+    print("Adding node\n")
+    print("\nPrinting all the nodes\n")
+    dl.print_list()
+    #print(f" Number of linked nodes = {dl.size}")
+    
 
-#=======================Stack using Lists======================================#
+
+#=============================================================================#
+#====================== Stack using Lists ====================================#
 # Reference  https://www.tutorialspoint.com/python_data_structure/python_stack.htm
 
 # Program to create a stack data structure in Python using list
@@ -377,14 +444,17 @@ def learnDequeue():
 
 
 
+
 # =============================================================================#
 # ======================== Run test ===========================================#
 
 
 #learnLinkedList()
+learnDoublyLinkedList()
 #learnStack()
 #learnArray()
 #learnQueue()
 #learnDequeue()
+
 
 
