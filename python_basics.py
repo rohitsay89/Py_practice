@@ -57,6 +57,32 @@ elif (input_number > 50):
 else:
     print("Invalid number")
 
+#===============================================================================#
+# #Various looping Techniques in Python
+#===============================================================================#
+# Use of enumerate(): it is used to loop into containers and printing the index number along with
+# the value present in that perticutar 
+
+def enumerate_example():
+    data = ['The','world','is', 'mine']
+    print("Enumerate Example")
+    for key, value in enumerate(data):
+        print(key, value)
+
+enumerate_example()
+
+# Using Zip function to combine to containers 
+# intializing 
+
+def zip_example():
+    questions = ['country','name','state']
+    answers = ['USA','John','CA']
+    
+    print("Zip example")
+    for questions, answers in zip(questions, answers):
+        print(questions,answers)
+
+zip_example()
 
 # Function
 def greet(name):
