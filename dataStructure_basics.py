@@ -484,6 +484,7 @@ def learnQueue():
 #========================= Dequeue ============================================#
 # Dequeue is a Data stucture that combines features of Stack and Queue. In which 
 # you can add data on both the end.
+# Dequeue using Collection module
 
 from collections import deque
 
