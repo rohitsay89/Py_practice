@@ -2,15 +2,14 @@
 step_count = 0
 
 
-# (2^n -1) printing values upto n = 10
-def twon_one():
-    for i in range(0, 100):
-        y = (pow(2, i) - 1)
-        print(y)
+# print values from 0 to (2^n - 1)
+def twon_one(n):
+    for i in range(0, n):
+        y = ((2**i) - 1)
+        print(i, y)
+
 
 # Collatz conjecture
-
-
 def threen_plus_one(x):
     if(x == 0):
         return -1
@@ -28,10 +27,16 @@ def threen_plus_one(x):
         y = ((3*x) + 1)
         return threen_plus_one(y)
 
+def calcPi():
+    print(22/7)
 
 def testCollatzConj(n):
     for i in range(1, n):
         print(i, threen_plus_one(i))
 
-#twon_one()
-testCollatzConj(1000)
+
+
+#twon_one(50)
+#testCollatzConj(1000)
+calcPi()
+
