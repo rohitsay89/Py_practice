@@ -31,6 +31,7 @@ Following are the topics that are discussed in this repository:
 4. COM port communication
 5. SQLite usage
 6. Data Analysis
+7. Math Learning
 
 
 Git commands:
