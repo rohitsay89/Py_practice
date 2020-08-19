@@ -1,6 +1,22 @@
 # This file is for simple math calculation scripts
 step_count = 0
 
+def fibonacci(n):
+#using recursion
+    #if(n <= 1):
+    #    return n;
+    #return fibonacci(n-1) + fibonacci(n-2)
+# using for loop
+    prev = 0
+    current = 1
+    next = 0
+    #print(prev, '\n', current)
+    for i in range(1,n):
+        next = prev + current
+        #print(next)
+        prev = current
+        current = next
+    return next
 
 # print values from 0 to (2^n - 1)
 def twon_one(n):
@@ -38,5 +54,6 @@ def testCollatzConj(n):
 
 #twon_one(50)
 #testCollatzConj(1000)
-calcPi()
+#calcPi()
+print(fibonacci(3000000))
 
