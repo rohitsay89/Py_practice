@@ -1,6 +1,7 @@
 # This file is for simple math calculation scripts
 import sys
 import math
+import matplotlib.pyplot as plt
 
 step_count = 0
 
@@ -25,6 +26,7 @@ def fibonacci(n):
         current = next
     print("Get size of next = ", sys.getsizeof(next))
     return next
+
 
 # print values from 0 to (2^n - 1)
 def twon_one(n):
@@ -73,9 +75,39 @@ def summation():
     soc = (AHbat/50)*100
     print(soc)
 
-def math_functions():
-    for i in range(1,5000):
-        print('{:.2f}'.format(math.sqrt(i)), '{:.2f}'.format(math.log10(i)))
+def growthRateComparison():
+    n     = []
+    sqrtP = []
+    logP  = []
+    nlogP = []
+    nSqP  = []
+    nCubP = []
+    n2P   = []
+    n3P   = []
+    nnP   = []
+    for i in range(1,6):
+        n.append(i)
+        #sqrtP.append('{:.2f}'.format(math.sqrt(i)))
+        sqrtP.append(math.sqrt(i))
+        logP.append(math.log2(i))
+        nlogP.append(i*(math.log2(i)))
+        nSqP.append(i**2)
+        nCubP.append(i**3)
+        n2P.append(2**i)
+        n3P.append(3**i)
+        nnP.append(i**i)
+        #print('{:.2f}'.format(math.sqrt(i)), '{:.2f}'.format(math.log10(i)))
+    plt.plot(n, sqrtP)
+    plt.plot(n, logP)
+    plt.plot(n, nlogP)
+    plt.plot(n, nSqP)
+    plt.plot(n, nCubP)
+    plt.plot(n, n2P)
+    plt.plot(n, n3P)
+    plt.plot(n, nnP)
+    plt.grid()
+    plt.show()
+
 
 #twon_one(50)
 #testCollatzConj(1000)
@@ -83,5 +115,5 @@ def math_functions():
 #print("max size = ", sys.maxsize)
 #print(fibonacci(3000000))
 #summation()
-math_functions()
+growthRateComparison()
 
