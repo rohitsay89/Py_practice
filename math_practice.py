@@ -1,7 +1,10 @@
 # This file is for simple math calculation scripts
 import sys
+import math
 
 step_count = 0
+
+import random
 
 def fibonacci(n):
 #using recursion
@@ -56,10 +59,29 @@ def testCollatzConj(n):
         print(i, threen_plus_one(i))
 
 
+def summation():
+    inputCurrent = []
+    for t in range(0,3601):
+        #print(t)
+        inputCurrent = inputCurrent + [random.randint(41,49)]
+    AHbat = 0
+    for t in range(1, 3601):
+        #print(t, AHbat)
+        AHbat = AHbat + inputCurrent[t]
+
+    AHbat = AHbat/3600
+    soc = (AHbat/50)*100
+    print(soc)
+
+def math_functions():
+    for i in range(1,5000):
+        print('{:.2f}'.format(math.sqrt(i)), '{:.2f}'.format(math.log10(i)))
 
 #twon_one(50)
 #testCollatzConj(1000)
 #calcPi()
 #print("max size = ", sys.maxsize)
-print(fibonacci(3000000))
+#print(fibonacci(3000000))
+#summation()
+math_functions()
 
