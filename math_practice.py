@@ -17,14 +17,19 @@ def fibonacci(n):
     current = 1
     next = 0
     print("Get size of next = ", sys.getsizeof(next))
-
+    xp = []
+    fnum = []
     #print(prev, '\n', current)
     for i in range(1,n):
         next = prev + current
         #print(next)
         prev = current
         current = next
+        xp.append(i)
+        fnum.append(current)
     print("Get size of next = ", sys.getsizeof(next))
+    plt.plot(xp, fnum)
+    plt.show()
     return next
 
 
@@ -113,7 +118,7 @@ def growthRateComparison():
 #testCollatzConj(1000)
 #calcPi()
 #print("max size = ", sys.maxsize)
-#print(fibonacci(3000000))
+print(fibonacci(100))
 #summation()
-growthRateComparison()
+#growthRateComparison()
 
