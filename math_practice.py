@@ -16,7 +16,7 @@ def fibonacci(n):
     prev = 0
     current = 1
     next = 0
-    print("Get size of next = ", sys.getsizeof(next))
+    #print("Get size of next = ", sys.getsizeof(next))
     xp = []
     fnum = []
     #print(prev, '\n', current)
@@ -27,9 +27,9 @@ def fibonacci(n):
         current = next
         xp.append(i)
         fnum.append(current)
-    print("Get size of next = ", sys.getsizeof(next))
-    plt.plot(xp, fnum)
-    plt.show()
+    #print("Get size of next = ", sys.getsizeof(next))
+    #plt.plot(xp, fnum, 'o-')
+    #plt.show()
     return next
 
 
@@ -109,7 +109,7 @@ def growthRateComparison():
     plt.plot(n, nCubP)
     plt.plot(n, n2P)
     plt.plot(n, n3P)
-    plt.plot(n, nnP)
+    plt.plot(n, nnP, '*')
     plt.grid()
     plt.show()
 
@@ -118,7 +118,8 @@ def growthRateComparison():
 #testCollatzConj(1000)
 #calcPi()
 #print("max size = ", sys.maxsize)
-print(fibonacci(100))
+for i in range(1, 100):
+    print(fibonacci(i))
 #summation()
 #growthRateComparison()
 
