@@ -2,43 +2,64 @@
 import sys
 import math
 import matplotlib.pyplot as plt
+import random
 
 step_count = 0
 
-import random
+def fact(n):
+    if(n==1):
+        return 1
+    return n*fact(n-1)
 
+def summ(n):
+    if(n==1):
+        return 1
+    return (n + summ(n-1))
+
+def print1_n(n):
+    if(n==0):
+        print(' ', n, end='')
+        return
+    print(' ', n, end='')		# for descending order print
+    print1_n(n-1)
+    #print(" ", n)		# for ascending order print
+
+# Logical operators =
+# or for OR operator
+# and for AND operator
+# not for NOT operator
 def fibonacci(n):
-#using recursion
-    #if(n <= 1):
-    #    return n;
-    #return fibonacci(n-1) + fibonacci(n-2)
-# using for loop
-    prev = 0
-    current = 1
-    next = 0
-    #print("Get size of next = ", sys.getsizeof(next))
-    xp = []
-    fnum = []
-    #print(prev, '\n', current)
-    for i in range(1,n):
-        next = prev + current
-        #print(next)
-        prev = current
-        current = next
-        xp.append(i)
-        fnum.append(current)
-    #print("Get size of next = ", sys.getsizeof(next))
-    #plt.plot(xp, fnum, 'o-')
-    #plt.show()
-    return next
-
+    #using recursion
+    if 0:
+        if( (n==0) or (n==1)):
+            return 1
+        return (fibonacci(n-1) + fibonacci(n-2))
+    # using for loop
+    if 1:
+        prev = 0
+        current = 1
+        next = 0
+        #print("Get size of next = ", sys.getsizeof(next))
+        xp = []
+        fnum = []
+        #print(prev, '\n', current)
+        for i in range(1,n):
+            next = prev + current
+            #print(next)
+            prev = current
+            current = next
+            xp.append(i)
+            fnum.append(current)
+        #print("Get size of next = ", sys.getsizeof(next))
+        #plt.plot(xp, fnum, 'o-')
+        #plt.show()
+        return next
 
 # print values from 0 to (2^n - 1)
 def twon_one(n):
     for i in range(0, n):
         y = ((2**i) - 1)
         print(i, y)
-
 
 # Collatz conjecture
 def threen_plus_one(x):
@@ -59,12 +80,13 @@ def threen_plus_one(x):
         return threen_plus_one(y)
 
 def calcPi():
-    print(22/7)
+    print('22/7    = ', 22/7)
+    print('math.pi = ', math.pi)
+
 
 def testCollatzConj(n):
     for i in range(1, n):
         print(i, threen_plus_one(i))
-
 
 def summation():
     inputCurrent = []
@@ -113,13 +135,22 @@ def growthRateComparison():
     plt.grid()
     plt.show()
 
+def vLearnRecursion():
+    print('Calculate factorial using Recursion')
+    for i in range(1,51):
+        print('fact(', i, ') = ' , fact(i))
+    #print('Calculate Summation using Recursion')
+    #print( summ(12) )
+    #print('\nPrint numbers from 0 to n \n', print1_n(10))
+
 
 #twon_one(50)
 #testCollatzConj(1000)
 #calcPi()
 #print("max size = ", sys.maxsize)
-for i in range(1, 100):
-    print(fibonacci(i))
+#for i in range(1, 100):
+#    print(fibonacci(i))
+#print(fibonacci(100))
 #summation()
 #growthRateComparison()
-
+vLearnRecursion()
