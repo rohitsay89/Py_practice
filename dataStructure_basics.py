@@ -394,30 +394,34 @@ def learnDoublyLinkedList():
 # Reference  https://www.tutorialspoint.com/python_data_structure/python_stack.htm
 
 # Program to create a stack data structure in Python using list
-a = []  # create a default list of all zeros
-top = 0
+a = []      # create a default list of all zeros
+top = 0     # top variable is index from 1 to n
 print("\nProgram to create a stack data structure in Python using list \n")
 
 
 def Push(n):                        # Push function: Push data on the stack
     global top                      # specify the 'top' variable is global
+    global a
     a.append(n)
     top = top + 1                   # increment the top
 
 
 def Pop():                          # Pop function: remove data from top of stack
     global top                      # specify the 'top' variable is global
+    a.pop(top-1)
     top = top - 1                   # decrement the top variable
 
 
 def Peek():
     global top                      # specify the 'top' variable is global
+    global a
     print("Peek = ", a[top-1])
 
 
 def PrintStack():
     index = 0
     global top
+    global a
     while index < top:
         print(a[index], "|", end=" "),
         index = index + 1
@@ -431,16 +435,20 @@ def learnStack():
     PrintStack()
     Peek()
 
+    print('\nPop from top of stack')
     Pop()
     PrintStack()
-    Peek()
 
+    #Peek()
+    print('\nPop from top of stack')
     Pop()
     PrintStack()
     #print(a)                        # Print the updated list after all operations
 
-<<<<<<< HEAD
-=======
+    print('\nPush to top of stack')
+    Push(789787)
+    PrintStack()
+
 #=======================Stack using Linked Lists======================================#
 
 
@@ -476,8 +484,6 @@ def PopStackLL(stack):
 def PeekStackLL(stack):
     print(stack.read_last_node())
 
-
->>>>>>> 69070a661f6b6e79ad02ba1e253db7ed3d069c77
 #==============================================================================#
 #========================= Queue ==============================================#
 
@@ -527,12 +533,7 @@ def learnQueue():
 
     print("\nPrinting Queue")
     que.print_queue()
-<<<<<<< HEAD
-    
-=======
 
-
->>>>>>> 69070a661f6b6e79ad02ba1e253db7ed3d069c77
 #==============================================================================#
 #========================= Dequeue ============================================#
 # Dequeue is a Data stucture that combines features of Stack and Queue. In which 
@@ -569,33 +570,17 @@ def learnDequeue():
 def learnCircularBuffer():
     print("This is circular buffer demo")
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
 # =============================================================================#
-# ======================== Run test ===========================================#
-=======
->>>>>>> 69070a661f6b6e79ad02ba1e253db7ed3d069c77
 
 # ======================== Run test ===========================================#
 
 #learnLinkedList()
 #learnDoublyLinkedList()
-#learnStack()
+learnStack()
 #learnStackLL()
 #learnArray()
 #learnQueue()
 #learnDequeue()
-learnCircularBuffer()
+#learnCircularBuffer()
 
-<<<<<<< HEAD
-
-
-=======
 # ============================== End =========================================#
->>>>>>> 69070a661f6b6e79ad02ba1e253db7ed3d069c77
