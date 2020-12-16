@@ -567,9 +567,10 @@ def learnDequeue():
 
 # =============================================================================#
 # ======================= Circular Queue / Ring Buffer ======================= #
-
 que_size = 20
-
+# create class for circular queue
+# intialise front and rear pointers to -1
+# create a queue for que_size
 class CircularQueue:
     def __init__(self):
         self.front = -1
@@ -578,7 +579,7 @@ class CircularQueue:
 
     def insertCirQueue(self, data):
         if data not in self.CirQueue:
-            if self.front == -1:               # check if the circular buffer is getting
+            if self.front == -1:                # check if the circular buffer is getting
                 self.front = self.rear = 0      # initialized for the 1st time
                 self.CirQueue[0] = data
                 #print('Front = ', self.front, 'Rear = ', self.rear)
@@ -586,7 +587,7 @@ class CircularQueue:
             # check if queue is full ?
             localRear = self.rear + 1
             localRear = localRear % que_size
-            if(localRear == self.front):
+            if localRear == self.front:
                 print("Queue is full, unable to add anything")
                 return False
             self.rear = self.rear + 1
@@ -601,7 +602,7 @@ class CircularQueue:
             print('Circular Queue is empty')
             return
         value = self.CirQueue[self.front]
-        if( self.front == self.rear ):      # check if value is the only element in queue
+        if self.front == self.rear :      # check if value is the only element in queue
             self.rear = -1
             self.front = -1
             return  value
@@ -610,19 +611,17 @@ class CircularQueue:
         return value
 
     def printCirQueue(self):
-        if( self.front == -1 | self.rear == -1 ):
+        if self.front == -1 | self.rear == -1 :
             print('Circular queue is empty nothing to print')
             return
         i = self.front % que_size
         localrear = self.rear % que_size
-        while( i != localrear ):
-            print(self.CirQueue[i])
+        while i != localrear :
+            print(self.CirQueue[i], end='->')
             i = i % que_size
             i = i + 1
             i = i % que_size
         print(self.CirQueue[i])
-        #for data in self.CirQueue:
-        #    print(data, '|', end=' ')
 
 
 def learnCircularBuffer():
@@ -632,9 +631,18 @@ def learnCircularBuffer():
     crq.insertCirQueue(20)
     crq.insertCirQueue(30)
     crq.insertCirQueue(40)
-    crq.deleteCirQueue()
     crq.insertCirQueue(50)
     crq.insertCirQueue(60)
+    crq.printCirQueue()
+    crq.insertCirQueue(70)
+    crq.insertCirQueue(80)
+    crq.insertCirQueue(90)
+    crq.insertCirQueue(100)
+    crq.deleteCirQueue()
+    crq.printCirQueue()
+    crq.insertCirQueue(110)
+    crq.insertCirQueue(120)
+    crq.insertCirQueue(130)
     crq.deleteCirQueue()
     crq.printCirQueue()
 
