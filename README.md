@@ -28,7 +28,10 @@ Following are the topics that are discussed in this repository:
     e. Tree
     f. Graph
 
-4. COM port communication
+4. COM port communication:
+    a. serial port transmission using pyserial
+    b. Modbus communication over COM port
+    
 5. SQLite usage
 6. Data Analysis
 7. Math Learning
