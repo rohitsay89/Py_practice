@@ -566,9 +566,79 @@ def learnDequeue():
     print(de)
 
 # =============================================================================#
+# ======================= Circular Queue / Ring Buffer ======================= #
+
+que_size = 20
+
+class CircularQueue:
+    def __init__(self):
+        self.front = -1
+        self.rear = -1
+        self.CirQueue = [0] * que_size
+
+    def insertCirQueue(self, data):
+        if data not in self.CirQueue:
+            if self.front == -1:               # check if the circular buffer is getting
+                self.front = self.rear = 0      # initialized for the 1st time
+                self.CirQueue[0] = data
+                #print('Front = ', self.front, 'Rear = ', self.rear)
+                return True
+            # check if queue is full ?
+            localRear = self.rear + 1
+            localRear = localRear % que_size
+            if(localRear == self.front):
+                print("Queue is full, unable to add anything")
+                return False
+            self.rear = self.rear + 1
+            self.CirQueue[self.rear] = data
+            #print('Front = ', self.front, 'Rear = ', self.rear)
+            return True
+        else:
+            return False
+
+    def deleteCirQueue(self):
+        if self.front == -1:
+            print('Circular Queue is empty')
+            return
+        value = self.CirQueue[self.front]
+        if( self.front == self.rear ):      # check if value is the only element in queue
+            self.rear = -1
+            self.front = -1
+            return  value
+        self.front += 1                     # if not then just go to the next element of queue
+        self.front %= que_size
+        return value
+
+    def printCirQueue(self):
+        if( self.front == -1 | self.rear == -1 ):
+            print('Circular queue is empty nothing to print')
+            return
+        i = self.front % que_size
+        localrear = self.rear % que_size
+        while( i != localrear ):
+            print(self.CirQueue[i])
+            i = i % que_size
+            i = i + 1
+            i = i % que_size
+        print(self.CirQueue[i])
+        #for data in self.CirQueue:
+        #    print(data, '|', end=' ')
+
 
 def learnCircularBuffer():
     print("This is circular buffer demo")
+    crq = CircularQueue()
+    crq.insertCirQueue(10)
+    crq.insertCirQueue(20)
+    crq.insertCirQueue(30)
+    crq.insertCirQueue(40)
+    crq.deleteCirQueue()
+    crq.insertCirQueue(50)
+    crq.insertCirQueue(60)
+    crq.deleteCirQueue()
+    crq.printCirQueue()
+
+
 
 # =============================================================================#
 
@@ -576,11 +646,11 @@ def learnCircularBuffer():
 
 #learnLinkedList()
 #learnDoublyLinkedList()
-learnStack()
+#learnStack()
 #learnStackLL()
 #learnArray()
 #learnQueue()
 #learnDequeue()
-#learnCircularBuffer()
+learnCircularBuffer()
 
 # ============================== End =========================================#
